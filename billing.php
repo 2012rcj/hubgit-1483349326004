@@ -150,14 +150,7 @@ while ($row = db2_fetch_assoc($stmt)) {
 $_SESSION['file']=$_FILES["file"]["name"]; 
 echo $_SESSION['file']; 
 ?>" alt="Image path Invalid" style="width:100%;height:50%"  >
-<?php
-}
-}
-}else
-{
-echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file size::: ".$_FILES["file"]["size"];
-}
-?>
+
 
 										</div>
 							</div>				
