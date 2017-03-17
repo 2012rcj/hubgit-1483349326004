@@ -145,6 +145,25 @@ while ($row = db2_fetch_assoc($stmt)) {
 									<div class="panel-body">
 
 <?php
+
+
+
+session_start();
+ 
+
+
+$pres=$_SESSION['file'];
+$Store_Id='1465804506';
+$PRISCRIPTION_Id=time();
+//echo $password;
+require("db_const.php");
+$stmt = db2_prepare($conn,"INSERT INTO RETAIL_PRISCRIPTION(ID,PRISCRIPTION,STORE_ID) VALUES('$PRISCRIPTION_Id','$pres','$Store_Id')");
+if (!db2_execute($stmt)) {
+    printf("%s\n", db2_stmt_error($stmt));
+    $err = db2_stmt_errormsg();
+    die($err . "\n");
+}										
+										
 if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/jpeg")
 || ($_FILES["file"]["type"] == "image/png"))
