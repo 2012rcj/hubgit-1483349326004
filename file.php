@@ -169,7 +169,7 @@ while ($row = db2_fetch_assoc($stmt)) {
 
 	<!-- Section: boxes -->
     <
-	</footer>
+
 
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
