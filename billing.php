@@ -169,26 +169,7 @@ move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"
 "Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
 ?>
 
-<img src="images/
-<?php
-$_SESSION['file']=$_FILES["file"]["name"]; 
-session_start();
- 
-
-
-$pres=$_SESSION['file'];
-$Store_Id='1465804506';
-$PRISCRIPTION_Id=time();
-//echo $password;
-require("db_const.php");
-$stmt = db2_prepare($conn,"INSERT INTO RETAIL_PRISCRIPTION(ID,PRISCRIPTION,STORE_ID) VALUES('$PRISCRIPTION_Id','$pres','$Store_Id')");
-if (!db2_execute($stmt)) {
-    printf("%s\n", db2_stmt_error($stmt));
-    $err = db2_stmt_errormsg();
-    die($err . "\n");
-}
-echo $_SESSION['file']; 
-?>" alt="Image path Invalid" style="width:100%;height:50%"  >
+<img src="images/<?php $_echo $_FILES["file"]["name"]; ?>" alt="Image path Invalid" style="width:100%;height:50%"  >
 <?php
 }
 }
