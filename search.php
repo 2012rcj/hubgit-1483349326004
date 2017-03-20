@@ -16,7 +16,7 @@ Search: <input type="text" name="term" /><br />
 include 'db_const.php';
 if (!empty($_REQUEST['term'])) {
 
-$term = explode (" ", trim($_REQUEST['term']));     
+$term = $_REQUEST['term'];     
 
 
 $stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'and Prod_Nm LIKE '%".$term."%'";
