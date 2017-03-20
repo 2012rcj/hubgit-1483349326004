@@ -19,7 +19,7 @@ if (!empty($_REQUEST['term'])) {
 $term = $_REQUEST['term'];     
 
 
-$stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'and Prod_Nm LIKE '%".$term."%' order by ASC";
+$stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'and Prod_Nm LIKE '%".$term."%'";
        $result = db2_prepare($conn, $stmt);
        db2_execute($result);
            
