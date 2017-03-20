@@ -35,7 +35,7 @@
 	
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="top-area">
-			<div class="container">   
+			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 col-md-6">
 					<p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
@@ -156,6 +156,7 @@ echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file 
 		</div>		
     </section>
 	
+
 	<!-- /Section: intro -->
 <script>
 	$(function() {
@@ -177,45 +178,49 @@ echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file 
 <div class="line">
  <section id="boxes" class="home-section paddingtop-80"> 
 
-<div class="container">
+<div class="container" align="center">
 <div class="row">
-<div class="col-sm-6 col-md-4">
+	              
+
+
+	<div class="col-sm-3 col-md-3">
 <div class="wow fadeInUp" data-wow-delay="0.2s">
 <div class="box text-center">
+
+</div>
+</div>
+</div>
+	
+<div class="col-sm-6 col-md-4" >
+<div class="wow fadeInUp" data-wow-delay="0.2s">
+
+	<div class="box text-center" >
 							
 <i class="fa fa-check fa-3x circled bg-skin"></i>
-<h4 class="h-bold"><a href="#section1" onclick="toggle_visibility('foo1');">Want to Add Some More Medicines</h4></a>
+<h4 class="h-bold"><a href="#section1" onclick="toggle_visibility('foo1');">Want to Add Some More Medicines</a></h4>
 <p>
 Add some more medicines beyond your priscription 
 </p>
 </div>
 </div>
 </div>
-<div class="col-sm-3 col-md-3">
+
+	
+	
+<div class="col-sm-3 col-md-3" >
 <div class="wow fadeInUp" data-wow-delay="0.2s">
 <div class="box text-center">
 <i class="fa fa-list-alt fa-3x circled bg-skin"></i>
-<h4 class="h-bold"><a href="#" onclick="toggle_visibility('foo');">Make Billing</h4></a>
+<h4 class="h-bold"><a href="#section2" onclick="toggle_visibility('foo');">Make Billing</a></h4>
 <p>
 Fill your address and order will be delivered at home  
 </p>
 </div>
 </div>
-</div>
-				
-<div class="col-sm-3 col-md-3">
-<div class="wow fadeInUp" data-wow-delay="0.2s">
-<div class="box text-center">
-<i class="fa fa-user-md fa-3x circled bg-skin"></i>
-<h4 class="h-bold">Consult A Doctor</h4>
-<p>
-Need A doctor Make An appiontment
-</p>
-</div>
-</div>
-</div>
 
 </div>
+</div>
+	<div id="section1">
 <div id="foo" class="wow fadeInDown" style="display:none;">
 <section id="boxes" class="home-section paddingtop-80">
 <div class="container">
@@ -230,10 +235,9 @@ Need A doctor Make An appiontment
 <div class="panel-heading">
 <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span>BILLING INFO</h3>
 </div>
-<div class="panel-body">
+
 
 						
-						<title>Billing Info</title>
 
 
 
@@ -241,7 +245,7 @@ Need A doctor Make An appiontment
 function FillBilling(f) {
   if(f.billingtoo.checked == true) {
    
-    f.Address.value = f.address.value;
+    f.billingaddress.value=f.shippingaddress.value;
   }
 }
  function isNumber(evt) {
@@ -275,7 +279,7 @@ return false;
 </script>  
 
 
-</head>
+
 
 
 
@@ -293,8 +297,7 @@ return false;
  
  <table  width="500" height="500" border="0"  cellpadding="1px">   
 
-            <tr><td>Order Total:</td><td><input type="text" readonly="readonly" value="<?php session_start();
-echo $_SESSION['Total'];?>" </td></tr>
+            <tr><td>Order Total:</td><td><input type="text" readonly="readonly" value="0" /></td></tr>
              
 <tr><td>Phone:</td><td><input type="text" name="mobile_no" required maxlength="10" onkeypress="javascript:return isNumber(event)" </td></tr>
             <tr><td>Your Name:</td><td><input type="text" name="name"  /></td></tr>
@@ -309,20 +312,19 @@ echo $_SESSION['Total'];?>" </td></tr>
             <tr><td>&nbsp;</td><td><input type="submit"class ="myButton" value="Confirm Order"  /></td></tr>
         </table>
 	</div>
-</div>
 </form>
 </body>
 	
-</form>
-				</div></div>
+
+				</div> </div>
 					</div>
 				</div>
 				</div>
-				</div></div></div>
+				</div></div>
 			
 		
 
-	</section></div>
+	</section></div></div>
 	<div id="section1">
 	<div id="foo1" class="wow fadeInDown" style="display:none;">
 <section id="boxes" class="home-section paddingtop-80">
@@ -527,7 +529,7 @@ function popup(mylink, windowname)
         <?php
        $count=0;
         //get rows query
-        $stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1472222821'";
+        $stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'";
        $result = db2_prepare($conn, $stmt);
        db2_execute($result);
            
@@ -547,8 +549,8 @@ if($count == 3) {
             		
                     Price:<big style="color:green">
                     	Rs<?php echo $row['MRP']?></big><br /><br />
-                   
-                 
+                                  
+               
  <a class="btnLink" href="viewCart.php?action=addToCart&PROD_ID=<?php echo $row["PROD_ID"]; ?>" onClick="return popup(this, 'notes')">Add to cart</a></in>
                   </td></td>
 		
