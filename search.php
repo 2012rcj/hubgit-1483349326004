@@ -10,7 +10,7 @@
     <body>
 <form action="" method="post">  
 Search: <input type="text" name="term" /><br />  
-<input type="submit" value="Submit" />  
+<button type="submit" value="Submit" />  
 </form>  
 <?php
 include 'db_const.php';
