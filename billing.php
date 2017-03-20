@@ -35,7 +35,7 @@
 	
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="top-area">
-			<div class="container">
+			<div class="container">   
 				<div class="row">
 					<div class="col-sm-6 col-md-6">
 					<p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
