@@ -65,7 +65,7 @@ $("body").css('overflow','auto');});
 <!-- For More Info Visit : http://www.discussdesk.com/show-hide-fixed-sidebar-on-click-in-jquery.htm-->
 <!-- ============================ -->
 
-<form action="ctntItem cf margint10"  method="post">  
+<form action="#ctntItem cf margint10"  method="post">  
 Search: <input type="text" name="term" /><br />  
 <input  type="submit" value="Submit" />  
 </form>
