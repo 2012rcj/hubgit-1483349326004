@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">     
-    <meta name="author" content="">   
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>99 Retail Pvt Ltd</title>  
+    <title>99 retail Solution Pvt Ltd</title>
 	
     <!-- css -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -17,6 +17,7 @@
 	<link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
 	<link href="css/owl.carousel.css" rel="stylesheet" media="screen" />
     <link href="css/owl.theme.css" rel="stylesheet" media="screen" />
+      <link href="simpletreemenu.js" rel="stylesheet"  />
 	<link href="css/animate.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet">
 
@@ -30,7 +31,7 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
-<div id="wrapper">
+<div id="wrapper">  
 	
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="top-area">
@@ -40,7 +41,7 @@
 					<p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
 					</div>
 					<div class="col-sm-6 col-md-6">
-					<p class="bold text-right">Call us now </p>
+					<p class="bold text-right">Call us now ---</p>
 					</div>
 				</div>
 			</div>
@@ -56,47 +57,11 @@
                 </a>
             </div>
 
-           <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-
-
-	<ul class="nav navbar-nav">
-		<li class="active">
-			<?php
-include 'db_const.php';
-SESSION_START();
-
-  $Mobile_No=$_SESSION['Mobile_No'];
-
-	$CUST_ID=$_SESSION['CUST_id'];
-
-
-
-$sql = "SELECT * FROM RETAIL_CUST  where CUST_ID='$CUST_ID' LIMIT 1 ";
-$stmt = db2_prepare($conn, $sql);
-$result = db2_execute($stmt);
-while ($row = db2_fetch_assoc($stmt)) {
-     
-     $name="<b>".$row['NAME'] ."</b>";
-    echo"<b>";
-    echo "Hello $name";
-    echo "</b>";
-}
-?></li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret">
-</b>
-</a>
-<ul class="dropdown-menu">
-<li><a href="logout.php">Logout</a></li>
-
-</ul>
-</li>
-</ul>
-</div>
-<!-- /.navbar-collapse -->
- </div>
- <!-- /.container -->
-  </nav>
+           
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 	
 
 	<!-- Section: intro -->
@@ -106,7 +71,7 @@ while ($row = db2_fetch_assoc($stmt)) {
 				<div class="row">
 					<div class="col-lg-6">
 					<div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
-					<h2 class="h-ultra">Pierson medical group</h2>
+					<h2 class="h-ultra">Hemas medical group</h2>
 					</div>
 					
 	
@@ -122,7 +87,8 @@ while ($row = db2_fetch_assoc($stmt)) {
 							<i class="fa fa-check fa-3x circled bg-skin"></i>
 							<h4 class="h-bold"> Your Uploaded Priscription </h4>
 							<p>
-							The Priscription you have uploaded ensure that the prescription is valid.
+							The Priscription you have Uploaded should be given by the doctors consult 							</p>
+
                                                </ul>	</ul>
 						</div>
 					</div></div></div></div>
@@ -168,12 +134,16 @@ echo "<b>".$_FILES["file"]["name"] . " already exists. </b>";
 move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"]);
 "Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
 ?>
-										<img src="images/
-<?php
-$_SESSION['file']=$_FILES["file"]["name"]; 
-echo $_SESSION['file']; 
-?>" alt="Image path Invalid" style="width:100%;height:50%"  >
 
+<img src="images/<?php echo $_FILES["file"]["name"]; ?>" alt="Image path Invalid" style="width:100%;height:100%"  >
+<?php
+}
+}
+}else
+{
+echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file size::: ".$_FILES["file"]["size"];
+}
+?>
 
 										</div>
 							</div>				
@@ -207,49 +177,45 @@ echo $_SESSION['file'];
 <div class="line">
  <section id="boxes" class="home-section paddingtop-80"> 
 
-<div class="container" align="center">
+<div class="container">
 <div class="row">
-	              
-
-
-	<div class="col-sm-3 col-md-3">
+<div class="col-sm-6 col-md-4">
 <div class="wow fadeInUp" data-wow-delay="0.2s">
 <div class="box text-center">
-
-</div>
-</div>
-</div>
-	
-<div class="col-sm-6 col-md-4" >
-<div class="wow fadeInUp" data-wow-delay="0.2s">
-
-	<div class="box text-center" >
 							
 <i class="fa fa-check fa-3x circled bg-skin"></i>
-<h4 class="h-bold"><a href="#section1" onclick="toggle_visibility('foo1');">Want to Add Some More Medicines</a></h4>
+<h4 class="h-bold"><a href="#section1" onclick="toggle_visibility('foo1');">Want to Add Some More Medicines</h4></a>
 <p>
 Add some more medicines beyond your priscription 
 </p>
 </div>
 </div>
 </div>
-
-	
-	
-<div class="col-sm-3 col-md-3" >
+<div class="col-sm-3 col-md-3">
 <div class="wow fadeInUp" data-wow-delay="0.2s">
 <div class="box text-center">
 <i class="fa fa-list-alt fa-3x circled bg-skin"></i>
-<h4 class="h-bold"><a href="#section2" onclick="toggle_visibility('foo');">Make Billing</a></h4>
+<h4 class="h-bold"><a href="#" onclick="toggle_visibility('foo');">Make Billing</h4></a>
 <p>
 Fill your address and order will be delivered at home  
 </p>
 </div>
 </div>
+</div>
+				
+<div class="col-sm-3 col-md-3">
+<div class="wow fadeInUp" data-wow-delay="0.2s">
+<div class="box text-center">
+<i class="fa fa-user-md fa-3x circled bg-skin"></i>
+<h4 class="h-bold">Consult A Doctor</h4>
+<p>
+Need A doctor Make An appiontment
+</p>
+</div>
+</div>
+</div>
 
 </div>
-</div>
-	<div id="section1">
 <div id="foo" class="wow fadeInDown" style="display:none;">
 <section id="boxes" class="home-section paddingtop-80">
 <div class="container">
@@ -264,9 +230,10 @@ Fill your address and order will be delivered at home
 <div class="panel-heading">
 <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span>BILLING INFO</h3>
 </div>
-
+<div class="panel-body">
 
 						
+						<title>Billing Info</title>
 
 
 
@@ -274,7 +241,7 @@ Fill your address and order will be delivered at home
 function FillBilling(f) {
   if(f.billingtoo.checked == true) {
    
-    f.billingaddress.value=f.shippingaddress.value;
+    f.Address.value = f.address.value;
   }
 }
  function isNumber(evt) {
@@ -308,7 +275,7 @@ return false;
 </script>  
 
 
-
+</head>
 
 
 
@@ -326,7 +293,8 @@ return false;
  
  <table  width="500" height="500" border="0"  cellpadding="1px">   
 
-            <tr><td>Order Total:</td><td><input type="text" readonly="readonly" value="0" /></td></tr>
+            <tr><td>Order Total:</td><td><input type="text" readonly="readonly" value="<?php session_start();
+echo $_SESSION['Total'];?>" </td></tr>
              
 <tr><td>Phone:</td><td><input type="text" name="mobile_no" required maxlength="10" onkeypress="javascript:return isNumber(event)" </td></tr>
             <tr><td>Your Name:</td><td><input type="text" name="name"  /></td></tr>
@@ -341,19 +309,20 @@ return false;
             <tr><td>&nbsp;</td><td><input type="submit"class ="myButton" value="Confirm Order"  /></td></tr>
         </table>
 	</div>
+</div>
 </form>
 </body>
 	
-
-				</div> </div>
+</form>
+				</div></div>
 					</div>
 				</div>
 				</div>
-				</div></div>
+				</div></div></div>
 			
 		
 
-	</section></div></div>
+	</section></div>
 	<div id="section1">
 	<div id="foo1" class="wow fadeInDown" style="display:none;">
 <section id="boxes" class="home-section paddingtop-80">
@@ -558,7 +527,7 @@ function popup(mylink, windowname)
         <?php
        $count=0;
         //get rows query
-        $stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'";
+        $stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1472222821'";
        $result = db2_prepare($conn, $stmt);
        db2_execute($result);
            
@@ -578,8 +547,8 @@ if($count == 3) {
             		
                     Price:<big style="color:green">
                     	Rs<?php echo $row['MRP']?></big><br /><br />
-                                  
-               
+                   
+                 
  <a class="btnLink" href="viewCart.php?action=addToCart&PROD_ID=<?php echo $row["PROD_ID"]; ?>" onClick="return popup(this, 'notes')">Add to cart</a></in>
                   </td></td>
 		
