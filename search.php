@@ -25,7 +25,7 @@ $stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'and Prod_Nm 
            
         if(!empty($stmt)){
         
-            while($row = db2_fetch_assoc($result)){
+            while($row = db2_fetch_object($result)){
 
 ?>
 <td><b><?php echo $row['PROD_NM']?></b><br /><br />
