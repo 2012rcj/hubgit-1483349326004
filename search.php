@@ -1,75 +1,45 @@
-<!doctype html>
-<html>
-<head>
 
-    <title>How to hide/show an element using jQuery show/hide effects</title>
-    
-    <style>
-        body{
-            text-align: center;
-        }
+
+
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+<form action="" method="post">  
+Search: <input type="text" name="term" /><br />  
+<input type="submit" value="Submit" />  
+</form>  
+<?php
+include 'db_const.php';
+if (!empty($_REQUEST['term'])) {
+
+$term = mysql_real_escape_string($_REQUEST['term']);     
+
+
+$stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501',Prod_Nm LIKE '%".$term."%'";
+       $result = db2_prepare($conn, $stmt);
+       db2_execute($result);
+           
+        if(!empty($stmt)){
         
-        input{
-            margin-top:20px;
-            font-size:16px;
-            font-weight: bold;
-            padding:5px 10px;
-        }
+            while($row = db2_fetch_assoc($result)){
 
-        #box{
-            margin:50px auto;
-            width:500px;
-            height:100px;
-            color:#fff;
-            padding:10px;
-            background: orange;
-        }
-
-    </style>
-
-</head>
-<body>
-    
-    <input type="button" value="Hide Box" class="button-hide" />
-    <input type="button" value="Show Box" class="button-show"  />
-    
-    <div id="box">Box</div>
-
-    <!-- 
-        We use Google's CDN to serve the jQuery js libs. 
-        To speed up the page load we put these scripts at the bottom of the page 
-    -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
-    <script>
-
-        //DOM loaded 
-        $(document).ready(function() {
-            
-            //attach click event to buttons
-            $('.button-show').click(function(){
-                
-                /**
-                 * when show button is clicked we call the show plugin
-                 * which scales the box to default size
-                 * You can try other effects from here: http://jqueryui.com/effect/
-                 */
-                $("#box").show("scale", 500); 
-
-            });
-
-            $('.button-hide').click(function(){
-
-                //same thing happens except in this case we hide the element
-                $("#box").hide("scale", 500); 
-
-            });
-        });
-
-       
-
-    </script>
-
-</body>
-</html>
+?>
+<td><b><?php echo $row['PROD_NM']?></b><br /><br />
+            		
+                    Price:<big style="color:green">
+                    	Rs<?php echo $row['MRP']?></big><br /><br />
+                                  
+               
+ <a class="btnLink" href="viewCart.php?action=addToCart&PROD_ID=<?php echo $row["PROD_ID"]; ?>" onClick="return popup(this, 'notes')">Add to cart</a></in>
+                  </td></td>
+ <?php
+}  
+}
+}
+?>
+    </body>
+</html>    
