@@ -189,9 +189,9 @@ $("body").css('overflow','auto');});
 <!-- For More Info Visit : http://www.discussdesk.com/show-hide-fixed-sidebar-on-click-in-jquery.htm-->
 <!-- ============================ -->
 
-<form action="" method="post">  
+<form target="recentItem"  class="btn btn-bricky btn-lg" action="" method="post">  
 Search: <input type="text" name="term" /><br />  
-<input id="recentItem"  class="btn btn-bricky btn-lg" type="submit" value="Submit" />  
+<input  type="submit" value="Submit" />  
 </form>
 
 
