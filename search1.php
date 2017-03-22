@@ -9,48 +9,48 @@ $('#menu-button').click(function(){
 });
 </script>
 <style>
-#s-results {
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.s-results {
+    height: 100%;
+    width: 0;
     position: fixed;
-
-    top: 0px;
-    height: 10px;
-    left: 0px;
-    right: 0px;
-
-    background-color: yellow;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-duration: 0.3s;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
-#s-results:hover {
-    top: 50px;
-    background-color: cyan;
+.s-results a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
 }
 
-#s-results_inner {
-    position: fixed;
-
-    top: -50px;
-    height: 50px;
-    left: 0px;
-    right: 0px;
-
-    background-color: red;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+.s-results a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
 }
 
-#s-results:hover #s-results_inner {
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    background-color: magenta;
-} 
+.s-results .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .s-results {padding-top: 15px;}
+  .s-results a {font-size: 18px;}
+}
 </style>
 </head>
 <body>
