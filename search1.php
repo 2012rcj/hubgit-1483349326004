@@ -70,12 +70,10 @@ body
 </div>
 
 <script type = "text/javascript">
-	<script>
 
 $('#menu-button').click(function(){
      $('#hide-menu').toggleClass('show-menu');
 });
-</script>
 $(document).ready(function(){
 	$('#s-results').load('search.php').show();
 	
