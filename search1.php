@@ -48,10 +48,7 @@ body
  }  
 </style>
 </head>
-<script>
 
-
-</script>
 <body>
 <center>
 <br>
@@ -67,13 +64,12 @@ body
 <br>
 
 <div id = "s-results">
-	<!-- Search results here! -->
-</div>
 <nav id="hide-menu" class="hide-menu">
-<script type = "text/javascript">
-$('#menu-button').click(function(){
-     $('#hide-menu').toggleClass('show-menu');
+	<!-- Search results here! -->
+</nav>
+</div>
 
+<script type = "text/javascript">
 $(document).ready(function(){
 	$('#s-results').load('search.php').show();
 	
@@ -103,6 +99,6 @@ $(document).ready(function(){
 </script>
 
 </center>
-</nav>
+
 </body>
 </html>
