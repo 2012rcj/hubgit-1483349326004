@@ -63,7 +63,7 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
-    </nav>
+    
 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 
 			    <form action="" name = "form">	
@@ -73,7 +73,7 @@
 
 <!-- /.navbar-collapse -->
  </div>
-	
+</nav>	
 
 	<!-- Section: intro -->
     <section id="intro" class="intro">
