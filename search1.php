@@ -50,9 +50,7 @@ body
 </head>
 <script>
 
-$('#menu-button').click(function(){
-     $('#hide-menu').toggleClass('show-menu');
-});
+
 </script>
 <body>
 <center>
@@ -73,6 +71,9 @@ $('#menu-button').click(function(){
 </div>
 <nav id="hide-menu" class="hide-menu">
 <script type = "text/javascript">
+$('#menu-button').click(function(){
+     $('#hide-menu').toggleClass('show-menu');
+
 $(document).ready(function(){
 	$('#s-results').load('search.php').show();
 	
