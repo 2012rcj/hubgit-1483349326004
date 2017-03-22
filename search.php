@@ -1,8 +1,3 @@
-
-<html>
-<body>
-
-<nav id="hide-menu" class="hide-menu">
 <?php
 include("db_const.php");
 isset( $_REQUEST['name'] ) ? $name=$_REQUEST['name'] : $name='';
@@ -31,6 +26,3 @@ if( empty( $name )){
 }
 }
 ?>
-</nav>
-</body>
-</html>
