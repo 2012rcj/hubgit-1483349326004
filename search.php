@@ -1,13 +1,13 @@
 <?php
-include('db_const.php';);
-isset( $_REQUEST['term'] ) ? $name=$_REQUEST['term'] : $term='';
+include("db_const.php");
+isset( $_REQUEST['name'] ) ? $name=$_REQUEST['name'] : $name='';
 
+$name =  $name ;
 
-
-if( empty( $term )){
+if( empty( $name )){
 	echo '<script> alert("Please search something!")</script>';
 }else{
-	$stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'and Prod_Nm LIKE '%".$term."%'";
+	$stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'and Prod_Nm LIKE '%".$name."%'";
        $result = db2_prepare($conn, $stmt);
        db2_execute($result);
            
