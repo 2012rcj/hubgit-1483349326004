@@ -13,8 +13,8 @@
 </div>
 
 <form action="" name = "form">	
-	<input type="text" name="name" id="fn" Placeholder="Search Something..." style="width:300px; padding:8px;"/>
-	<input type="submit" value="Search" id="search-btn" style="padding:8px;"/>
+	<input type="text" name="name" id="fn" Placeholder="Search Something..." style="width:100px; padding:5px;"/>
+	<input type="submit" value="Search"  style="padding:5px;"/>
 </form>
 <br>
 
