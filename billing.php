@@ -55,6 +55,10 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="img/logo.png" alt="" width="150" height="40" />
                 </a>
+		    <form action="" name = "form">	
+	<input type="text" name="name" id="fn" Placeholder="Search Something..." style="width:300px; padding:8px;"/>
+	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
+</form>
             </div>
 
            
@@ -71,7 +75,7 @@
 				<div class="row">
 					<div class="col-lg-6">
 					<div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
-					<h2 class="h-ultra">Hemas medical group</h2>
+					<h2 class="h-ultra">Pierson medical group</h2>
 					</div>
 					
 	
