@@ -1,9 +1,12 @@
+
+<html>
+<body>
+
+<nav id="hide-menu" class="hide-menu">
 <?php
 include("db_const.php");
 isset( $_REQUEST['name'] ) ? $name=$_REQUEST['name'] : $name='';
-
 $name =  $name ;
-
 if( empty( $name )){
 	echo '<script> alert("Please search something!")</script>';
 }else{
@@ -14,7 +17,6 @@ if( empty( $name )){
         if(!empty($stmt)){
         
             while($row = db2_fetch_assoc($result)){
-
 ?>
 <td><b><?php echo $row['PROD_NM']?></b><br /><br />
             		
@@ -29,3 +31,6 @@ if( empty( $name )){
 }
 }
 ?>
+</nav>
+</body>
+</html>
