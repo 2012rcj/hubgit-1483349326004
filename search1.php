@@ -71,7 +71,7 @@ body
 
 <script type = "text/javascript">
 $(document).ready(function(){
-	$('#s-results').load('search.php').show();
+	$('#hide-menu').load('search.php').show();
 	
 	
 	$('#search-btn').click(function(){
@@ -86,12 +86,12 @@ $(document).ready(function(){
 	});
 		
 	function showValues() {
-		$('#s-results').html('<img src="images/loader.gif" />');  
+		$('#hide-menu').html('<img src="images/loader.gif" />');  
 		
 		$.post('search.php', { name: form.name.value },
 		
 		function(result){
-			$('#s-results').html(result).show();
+			$('#hide-menu').html(result).show();
 		});
 	}
 		
