@@ -70,8 +70,14 @@ body
 </div>
 
 <script type = "text/javascript">
+	<script>
+
+$('#menu-button').click(function(){
+     $('#hide-menu').toggleClass('show-menu');
+});
+</script>
 $(document).ready(function(){
-	$('#hide-menu').load('search.php').show();
+	$('#s-results').load('search.php').show();
 	
 	
 	$('#search-btn').click(function(){
@@ -86,12 +92,12 @@ $(document).ready(function(){
 	});
 		
 	function showValues() {
-		$('#hide-menu').html('<img src="images/loader.gif" />');  
+		$('#s-results').html('<img src="images/loader.gif" />');  
 		
 		$.post('search.php', { name: form.name.value },
 		
 		function(result){
-			$('#hide-menu').html(result).show();
+			$('#s-results').html(result).show();
 		});
 	}
 		
