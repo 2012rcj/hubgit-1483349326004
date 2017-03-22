@@ -2,12 +2,7 @@
 <head>
 	
 	<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
-<script>
 
-$('#menu-button').click(function(){
-     $('#hide-menu').toggleClass('show-menu');
-});
-</script>
 <style>
 body
     {
@@ -53,6 +48,12 @@ body
  }  
 </style>
 </head>
+<script>
+
+$('#menu-button').click(function(){
+     $('#hide-menu').toggleClass('show-menu');
+});
+</script>
 <body>
 <center>
 <br>
@@ -70,7 +71,7 @@ body
 <div id = "s-results">
 	<!-- Search results here! -->
 </div>
-
+<nav id="hide-menu" class="hide-menu">
 <script type = "text/javascript">
 $(document).ready(function(){
 	$('#s-results').load('search.php').show();
@@ -101,5 +102,6 @@ $(document).ready(function(){
 </script>
 
 </center>
+</nav>
 </body>
 </html>
