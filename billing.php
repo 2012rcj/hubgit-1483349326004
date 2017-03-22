@@ -54,10 +54,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">
                     <img src="img/logo.png" alt="" width="150" height="40" />
-				    <form action="" name = "form">	
-	<input type="text" name="name" id="fn" Placeholder="Search Something..." style="width:300px; padding:8px;"/>
-	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
-</form>
+	
                 </a>
 	
             </div>
@@ -67,6 +64,15 @@
         </div>
         <!-- /.container -->
     </nav>
+<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+
+			    <form action="" name = "form">	
+	<input type="text" name="name" id="fn" Placeholder="Search Something..." style="width:300px; padding:8px;"/>
+	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
+</form>
+
+<!-- /.navbar-collapse -->
+ </div>
 	
 
 	<!-- Section: intro -->
