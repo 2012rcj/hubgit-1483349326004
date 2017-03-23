@@ -4,50 +4,54 @@
 	<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
 
 <style>
-body {
-    font-family: "Lato", sans-serif;
-}
+body
+    {
+       overflow:hidden;
+    }
 
-.s-results {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
+.menu-button
+    {
+        border:1px solid #000;
+        color:fff;
+        display:inline-block;
+        cursor:pointer;
+    }
 
-.s-results a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
-.s-results a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-.s-results .closebtn {
+.hide-menu
+{
+    background-color:#336ca6;
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    top:0;
+    right:0;
+    z-index: 1;
+    width: 300px;
+    height: 100%;
+    -webkit-transform: translate3d(300px,0,0);
+    -moz-transform: translate3d(300px,0,0);
+    -o-transform: translate3d(300px,0,0);
+    -ms-transform: translate3d(300px,0,0);
+    transform: translate3d(300px,0,0);      
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
 }
 
-@media screen and (max-height: 450px) {
-  .s-results {padding-top: 15px;}
-  .s-results a {font-size: 18px;}
-}
+.show-menu      
+{
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+ }  
 </style>
 </head>
+<script>
+
+
+</script>
 <body>
 <center>
 <br>
@@ -96,6 +100,6 @@ $(document).ready(function(){
 </script>
 
 </center>
-</nav>
+
 </body>
 </html>
