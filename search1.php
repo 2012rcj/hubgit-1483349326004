@@ -50,16 +50,12 @@ body {
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
- <html>
-<head>
+ 
 	
 	<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
 
 
 
-</head>
-<body>
-<center>
 <br>
 
 <div style='display:none;'>
@@ -77,6 +73,8 @@ body {
 </div>
 
 <script type = "text/javascript">
+
+
 $(document).ready(function(){
 	$('#s-results').load('search.php').show();
 	
@@ -106,6 +104,8 @@ $(document).ready(function(){
 </script>
 
 </center>
+
+
 
 </div>
 
