@@ -66,10 +66,38 @@
     
 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 	<ul class="nav navbar-nav">
-			  <form action="" name = "form">	
-	<input type="text" name="name" id="fn" Placeholder="Search Something..." style="width:300px; padding:8px;"/>
-	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
-</form>
+			  		<li class="active">
+			<?php
+include 'db_const.php';
+SESSION_START();
+
+  $Mobile_No=$_SESSION['Mobile_No'];
+
+	$CUST_ID=$_SESSION['CUST_id'];
+
+
+
+$sql = "SELECT * FROM RETAIL_CUST  where CUST_ID='$CUST_ID' LIMIT 1 ";
+$stmt = db2_prepare($conn, $sql);
+$result = db2_execute($stmt);
+while ($row = db2_fetch_assoc($stmt)) {
+     
+     $name="<b>".$row['NAME'] ."</b>";
+    echo"<b>";
+    echo "Hello $name";
+    echo "</b>";
+}
+?></li>
+<li style="font-size:30px;cursor:pointer"  onclick="openNav()"> Search</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret">
+</b>
+</a>
+<ul class="dropdown-menu">
+<li><a href="logout.php">Logout</a></li>
+
+</ul>
+</li>
 	</ul>
             </div>
             <!-- /.navbar-collapse -->
