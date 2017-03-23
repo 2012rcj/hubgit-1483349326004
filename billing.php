@@ -88,7 +88,7 @@ while ($row = db2_fetch_assoc($stmt)) {
     echo "</b>";
 }
 ?></li>
-<a href="#intro" onclick="openNav()">Search</a>
+<li class="active"><a href="#intro" onclick="openNav()">Search</a></li>
 
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret">
