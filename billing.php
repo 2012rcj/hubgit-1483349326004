@@ -63,7 +63,124 @@
             <!-- /.navbar-collapse -->
         
         <!-- /.container -->
-    
+    <!--------------/Side Nav Bar---------------------->
+		
+		<style>
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+   right: 0px;
+    background-color: #ADD8E6;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+</style>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ 
+	
+	<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
+
+
+
+<br>
+
+<div style='display:none;'>
+	<img src="images/loader.gif" />
+</div>
+
+<form action="" name = "form">	
+	<input type="text" name="name" id="fn" Placeholder="Search Something..." style="width:300px; padding:8px;"/>
+	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
+</form>
+<br>
+
+<div id = "s-results">
+	<!-- Search results here! -->
+</div>
+
+<script type = "text/javascript">
+
+
+$(document).ready(function(){
+	$('#s-results').load('search.php').show();
+	
+	
+	$('#search-btn').click(function(){
+		showValues();
+	});
+	
+	$(function() {
+		$('form').bind('submit',function(){
+			showValues(); 
+			return false; 
+		});
+	});
+		
+	function showValues() {
+		$('#s-results').html('<img src="images/loader.gif" />');  
+		
+		$.post('search.php', { name: form.name.value },
+		
+		function(result){
+			$('#s-results').html(result).show();
+		});
+	}
+		
+});
+</script>
+
+</center>
+
+
+
+</div>
+
+
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "550px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+     
+
+
+		<!-----------------/Side Nav Bar-------------------->
 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 	<ul class="nav navbar-nav">
 	<li class="active"><a href="#intro" onclick="openNav()">Search</a></li>
