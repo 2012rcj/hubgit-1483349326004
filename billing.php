@@ -66,15 +66,16 @@
     
 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 	<ul class="nav navbar-nav">
+	<li class="active"><a href="#intro" onclick="openNav()">Search</a></li>
+<li><a href="#service">your Order History</a></li>
 
-<li class="active" onclick="openNav()">Search</a></li>
 
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret">
 </b>
 </a>
 <ul class="dropdown-menu">
-				  		<li class="active">
+		  		<li class="active">
 			<?php
 include 'db_const.php';
 SESSION_START();
