@@ -66,7 +66,15 @@
     
 <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 	<ul class="nav navbar-nav">
-			  		<li class="active">
+
+<li class="active" onclick="openNav()">Search</a></li>
+
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret">
+</b>
+</a>
+<ul class="dropdown-menu">
+				  		<li class="active">
 			<?php
 include 'db_const.php';
 SESSION_START();
@@ -88,13 +96,6 @@ while ($row = db2_fetch_assoc($stmt)) {
     echo "</b>";
 }
 ?></li>
-<li class="active"><a href="#intro" onclick="openNav()">Search</a></li>
-
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret">
-</b>
-</a>
-<ul class="dropdown-menu">
 <li><a href="logout.php">Logout</a></li>
 
 </ul>
