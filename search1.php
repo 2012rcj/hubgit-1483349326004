@@ -71,6 +71,11 @@ body
 </div>
 
 <script type = "text/javascript">
+	 $('form').bind('submit',function(e){
+         e.preventDefault(); /* This will stop the submit of form */
+        showValues(); 
+        return false; 
+    });
 $(document).ready(function(){
 	$('#s-results').load('search.php').show();
 	
