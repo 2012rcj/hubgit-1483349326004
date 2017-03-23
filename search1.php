@@ -2,9 +2,6 @@
 <html>
 <head>
 <style>
-body {
-    font-family: "Lato", sans-serif;
-}
 
 .sidenav {
     height: 100%;
@@ -13,7 +10,7 @@ body {
     z-index: 1;
     top: 0;
    right: 0px;
-    background-color: #111;
+    background-color: #ADD8E6;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -115,7 +112,7 @@ $(document).ready(function(){
 
 <script>
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "550px";
 }
 
 function closeNav() {
