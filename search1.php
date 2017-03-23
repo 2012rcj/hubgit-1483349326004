@@ -3,32 +3,60 @@
 	
 	<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
 
-
-</head>
 <style>
-	#sidebar {
-  width: 210px;
-  height: 100%;
-  position: fixed;
-  background: #2a3542;
- }
+body
+    {
+       overflow:hidden;
+    }
 
- #main-content {
-  margin-left: 210px;
-    position :relative;
- }
-.navbar{
-    cursor:pointer;
-    color:red;
+.menu-button
+    {
+        border:1px solid #000;
+        color:fff;
+        display:inline-block;
+        cursor:pointer;
+    }
+
+.hide-menu
+{
+    background-color:#336ca6;
+    position: absolute;
+    top:0;
+    right:0;
+    z-index: 1;
+    width: 300px;
+    height: 100%;
+    -webkit-transform: translate3d(300px,0,0);
+    -moz-transform: translate3d(300px,0,0);
+    -o-transform: translate3d(300px,0,0);
+    -ms-transform: translate3d(300px,0,0);
+    transform: translate3d(300px,0,0);      
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
 }
-	</style>
-	
+
+.show-menu      
+{
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+ }  
+</style>
+</head>
+<script>
+
+
+</script>
 <body>
 <center>
 <br>
- <div class="navbar">Search</div>
- <div id="sidebar">
-	 <div style='display:none;'>
+
+<div style='display:none;'>
 	<img src="images/loader.gif" />
 </div>
 
@@ -41,28 +69,11 @@
 <div id = "s-results">
 	<!-- Search results here! -->
 </div>
-
+<nav id="hide-menu" class="hide-menu">
 <script type = "text/javascript">
-	$(function(){
-    $('.navbar').on('click', function(){
-        if( $('#sidebar').is(':visible') ) {
-            $('#sidebar').animate({ 'width': '0px' }, 'slow', function(){
-                $('#sidebar').hide();
-            });
-            $('#main-content').animate({ 'margin-left': '0px' }, 'slow');
-        }
-        else {
-            $('#sidebar').show();
-            $('#sidebar').animate({ 'width': '210px' }, 'slow');
-            $('#main-content').animate({ 'margin-left': '210px' }, 'slow');
-        }
-    });
-});
-	 $('form').bind('submit',function(e){
-         e.preventDefault(); /* This will stop the submit of form */
-        showValues(); 
-        return false; 
-    });
+$('#menu-button').click(function(){
+     $('#hide-menu').toggleClass('show-menu');
+
 $(document).ready(function(){
 	$('#s-results').load('search.php').show();
 	
@@ -90,7 +101,8 @@ $(document).ready(function(){
 		
 });
 </script>
-</div>
+
 </center>
+</nav>
 </body>
 </html>
