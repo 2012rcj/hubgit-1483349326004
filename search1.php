@@ -2,12 +2,7 @@
 <head>
 	
 	<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
-<script>
 
-$('#menu-button').click(function(){
-     $('#hide-menu').toggleClass('show-menu');
-});
-</script>
 <style>
 body {
     font-family: "Lato", sans-serif;
