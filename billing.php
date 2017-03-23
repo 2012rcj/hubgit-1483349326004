@@ -95,7 +95,7 @@
 
 .sidenav .closebtn {
     position: absolute;
-    top: 100px;
+    top: 150px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
@@ -170,7 +170,7 @@ $(document).ready(function(){
 
 <script>
 function openNav() {
-    document.getElementById("mySidenav").style.width = "550px";
+    document.getElementById("mySidenav").style.width = "350px";
 }
 
 function closeNav() {
