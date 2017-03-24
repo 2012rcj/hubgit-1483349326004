@@ -129,10 +129,10 @@
 }
 
 .search_2{
-    width:250px;
+    width:200px;
     height:30px;
-    padding-left:15px;
-    border-radius:6px;
+    padding-left:10px;
+    border-radius:3px;
     border:none;
     color:  rgb(50, 48, 48);
     font-weight:500;
@@ -159,7 +159,7 @@
 .submit_2{
     width:35px;
     height:30px;
-    background-image:url(img/search-btn.png);
+    background-image:url(image/search-btn.png);
     background-repeat: no-repeat;
     background-position: 17px 2px;
     background-color:transparent;
