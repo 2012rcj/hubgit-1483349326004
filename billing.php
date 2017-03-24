@@ -195,10 +195,6 @@
 </form>
 	
 <br>
-	<br>
-	<br>
-	<br>
-	<br>
 
 <div id = "s-results">
 	<!-- Search results here! -->
