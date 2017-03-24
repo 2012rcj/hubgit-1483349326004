@@ -191,7 +191,7 @@
 
 <form action="" class="searchbox_2" name = "form">	
 	<input type="search" name="name" id="fn" class="search_2" placeholder="Search"/>
-	<button type="submit" class="submit_2" value="Search" id="menu-button" name="&nbsp;" />
+	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
 </form>
 	
 <br>
