@@ -74,7 +74,7 @@
     z-index: 1;
     top: 138px;
    right: 0px;
-    background-color: #FFFFFF;
+    background-color: #4ACCD1;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 40px;
