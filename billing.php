@@ -72,7 +72,7 @@
     width: 0;
     position: fixed;
     z-index: 1;
-    top: 165px;
+    top: 155px;
    right: 0px;
     background-color: #ADD8E6;
     overflow-x: hidden;
