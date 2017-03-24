@@ -159,7 +159,7 @@
 .submit_2{
     width:35px;
     height:30px;
-    background-image:url(image/search-btn.png);
+    background-image:url(images/search-btn.png);
     background-repeat: no-repeat;
     background-position: 17px 2px;
     background-color:transparent;
