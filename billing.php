@@ -78,6 +78,9 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+	  border-width: 1px;
+  border-color: #7f7f7f;
+  border-style: dashed;
 }
 
 .sidenav a {
@@ -86,7 +89,10 @@
     font-size: 25px;
     color: #818181;
     display: block;
-    transition: 0.3s
+    transition: 0.3s;
+border-width: 1px;
+  border-color: #7f7f7f;
+  border-style: dashed;
 }
 
 .sidenav a:hover, .offcanvas a:focus{
