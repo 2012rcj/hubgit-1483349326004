@@ -13,14 +13,13 @@ if( empty( $name )){
         
             while($row = db2_fetch_assoc($result)){
 ?>
+ <tr>
 <td><b><?php echo $row['PROD_NM']?></b><br /><br />
             		
                     Price:<big style="color:green">
                     	Rs<?php echo $row['MRP']?></big><br /><br />
-                                  
-               
- <a class="btnLink" href="viewCart.php?action=addToCart&PROD_ID=<?php echo $row["PROD_ID"]; ?>" onClick="return popup(this, 'notes')">Add to cart</a></in>
-                  </td></td>
+	<a class="btnLink" href="viewCart.php?action=addToCart&PROD_ID=<?php echo $row["PROD_ID"]; ?>" onClick="return popup(this, 'notes')">Add to cart</a></in>
+                  </td></tr>
  <?php
 }  
 }
