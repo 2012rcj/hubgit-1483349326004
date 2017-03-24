@@ -78,7 +78,7 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 40px;
-	border-top-left-radius: 10em;
+	border-top-left-radius: 6em;
   border-bottom-right-radius: 5em;
   border-bottom-left-radius: 2em;
 	 
@@ -91,9 +91,7 @@
     color: #818181;
     display: block;
     transition: 0.3s;
-	border-top-left-radius: 10em;
-  border-bottom-right-radius: 5em;
-  border-bottom-left-radius: 2em;
+	
 			}
 
 .sidenav a:hover, .offcanvas a:focus{
