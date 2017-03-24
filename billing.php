@@ -77,10 +77,8 @@
     background-color: #4ACCD1;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
-	  border-width: 1px;
-  border-color: #7f7f7f;
-  border-style: dashed;
+    padding-top: 40px;
+	 
 }
 
 .sidenav a {
@@ -90,10 +88,7 @@
     color: #818181;
     display: block;
     transition: 0.3s;
-border-width: 1px;
-  border-color: #7f7f7f;
-  border-style: dashed;
-}
+			}
 
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
