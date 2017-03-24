@@ -95,10 +95,10 @@
 
 .sidenav .closebtn {
     position: absolute;
-    top: 0px;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    top: 5px;
+    right: 20px;
+    font-size: 25px;
+    margin-left: 35px;
 }
 
 
