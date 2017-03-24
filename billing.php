@@ -74,7 +74,7 @@
     z-index: 1;
     top: 138px;
    right: 0px;
-    background-color: #00aed1;
+    background-color: #4ACCD1;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -296,7 +296,7 @@ move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"
 "Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
 ?>
 
-<img src="images/<?php echo $_FILES["file"]["name"]; ?>" alt="Image path Invalid" style="width:100%;height:100%"  >
+<img src="images/<?php echo $_FILES["file"]["name"]; ?>" alt="Image path Invalid" style="width:100%;height:60%"  >
 <?php
 }
 }
