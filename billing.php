@@ -78,9 +78,9 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 40px;
-	border-top-left-radius: 6em;
+	border-top-left-radius: 4em;
   border-bottom-right-radius: 5em;
-  border-bottom-left-radius: 2em;
+  border-bottom-left-radius: 4em;
 	 
 }
 
@@ -100,12 +100,77 @@
 
 .sidenav .closebtn {
     position: absolute;
-    top: 0px;
+    top: 12px;
     left: 0px;
     font-size: 45px;
     margin-right: 0px;
 }
+.searchbox_2{
+    background-color:rgba(174, 186, 172, 0);
+    padding:13px;
+    width:335px;
+    margin:30px auto;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    border-radius:6px;
+    -webkit-box-shadow:0 2px 4px 0 rgba(72, 72, 72, 0.83),
+        0 10px 15px 0 rgba(126, 126, 126, 0.12),
+        0 -2px 6px 1px rgba(199, 199, 199, 0.55) inset, 
+        0 2px 4px 2px rgba(255, 255, 255, 0.83) inset;
+    -moz-box-shadow: 0 2px 4px 0 rgba(72, 72, 72, 0.83),
+        0 10px 15px 0 rgba(126, 126, 126, 0.12),
+        0 -2px 6px 1px rgba(199, 199, 199, 0.55) inset, 
+        0 2px 4px 2px rgba(255, 255, 255, 0.83) inset;
+    box-shadow: 0 2px 4px 0 rgba(72, 72, 72, 0.83),
+        0 10px 15px 0 rgba(126, 126, 126, 0.12),
+        0 -2px 6px 1px rgba(199, 199, 199, 0.55) inset, 
+        0 2px 4px 2px rgba(255, 255, 255, 0.83) inset;
+}
 
+.search_2{
+    width:250px;
+    height:30px;
+    padding-left:15px;
+    border-radius:6px;
+    border:none;
+    color:  rgb(50, 48, 48);
+    font-weight:500;
+    background-color: #FCE2E2;
+    -webkit-box-shadow: 0 -2px 2px 0 rgba(199, 199, 199, 0.55),
+        0 1px 1px 0 #fff,
+        0 2px 2px 1px #fafafa,
+        0 2px 4px 0 #b2b2b2 inset,
+        0 -1px 1px 0 #f2f2f2 inset,
+        0 15px 15px 0 rgba(41, 41, 41, 0.09) inset;
+    -moz-box-shadow: 0 -2px 2px 0 rgba(199, 199, 199, 0.55),
+        0 1px 1px 0 #fff,
+        0 2px 2px 1px #fafafa,
+        0 2px 4px 0 #b2b2b2 inset,
+        0 -1px 1px 0 #f2f2f2 inset,
+        0 15px 15px 0 rgba(41, 41, 41, 0.09) inset;
+    box-shadow: 0 -2px 2px 0 rgba(199, 199, 199, 0.55),
+        0 1px 1px 0 #fff,
+        0 2px 2px 1px #fafafa,
+        0 2px 4px 0 #b2b2b2 inset,
+        0 -1px 1px 0 #f2f2f2 inset,
+        0 15px 15px 0 rgba(41, 41, 41, 0.09) inset;
+}
+.submit_2{
+    width:35px;
+    height:30px;
+    background-image:url(img/search-btn.png);
+    background-repeat: no-repeat;
+    background-position: 17px 2px;
+    background-color:transparent;
+    -webkit-background-size:20px 20px;
+    background-size: 18px 20px;
+    border:none;
+    cursor:pointer;
+}
+.search_2:focus{
+    outline:0;
+}
 
 </style>
 
@@ -126,7 +191,7 @@
 
 <form action="" class="searchbox_2" name = "form">	
 	<input type="search" name="name" id="fn" class="search_2" placeholder="Search"/>
-	<button type="submit" class="submit_2" value="Search" id="menu-button"/>&nbsp;
+	<button type="submit" class="submit_2" value="Search" id="menu-button" name="&nbsp;" />
 </form>
 	
 <br>
