@@ -2,9 +2,8 @@
 include("db_const.php");
 isset( $_REQUEST['name'] ) ? $name=$_REQUEST['name'] : $name='';
 $name =  $name ;
-if( !empty( $name )){
-	
-}else{
+if
+{
 	$stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'and Prod_Nm LIKE '%".$name."%'";
        $result = db2_prepare($conn, $stmt);
        db2_execute($result);
