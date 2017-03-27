@@ -405,7 +405,7 @@ echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file 
 });
 	</script>
 	<!-- Section: boxes -->
-   
+     
 	
 <div class="line">
  <section id="boxes" class="home-section paddingtop-80"> 
