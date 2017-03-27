@@ -875,3 +875,4 @@ function toggle_visibility(id) {
 require("footer.php");
 ?>
 </html>
+ 
