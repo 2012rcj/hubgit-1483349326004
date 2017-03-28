@@ -199,7 +199,7 @@
 <div id = "s-results">
 	<!-- Search results here! -->
 </div>
-
+<center>
 <script type = "text/javascript">
 
 
@@ -321,7 +321,7 @@ while ($row = db2_fetch_assoc($stmt)) {
 							<p>
 							The Priscription you have Uploaded should be given by the doctors consult 							</p>
 
-                                               </ul>	</ul>
+                                               	</ul>
 						</div>
 					</div></div></div></div>
 			
@@ -549,7 +549,7 @@ return false;
 	
 
 				</div> </div>
-					</div>
+				</div></div>
 				</div>
 				</div>
 				</div></div>
