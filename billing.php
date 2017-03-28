@@ -378,7 +378,7 @@ echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file 
 ?>
 
 										</div>
-							</div>				
+							</div>		 		
 						</div>
 						</div>
 						</div>
