@@ -15,7 +15,7 @@ $stmt = "SELECT * FROM RETAIL_STORE_PROD WHERE STORE_ID='1462908501'and Prod_Nm 
             		
                     Price:<big style="color:green">
                     	Rs<?php echo $row['MRP']?></big><br /><br />
-	<a class="btnLink" href="viewCart.php?action=addToCart&PROD_ID=<?php echo $row["PROD_ID"]; ?>" onClick="return popup(this, 'notes')">Add to cart</a></in>
+	<a href="viewCart.php?action=addToCart&PROD_ID=<?php echo $row["PROD_ID"]; ?>" onClick="return popup(this, 'notes')">Add to cart</a></in>
                   </td></tr>
  <?php
 }  
