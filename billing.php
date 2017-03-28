@@ -189,7 +189,7 @@
 	<img src="images/loader.gif" />
 </div>
 
-<form action="" class="searchbox_2" name = "form2">	
+<form action="" class="searchbox_2" name = "form">	
 	<input type="search" name="name" id="fn" class="search_2" placeholder="Search"/>
 	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
 </form>
@@ -212,7 +212,7 @@ $(document).ready(function(){
 	});
 	
 	$(function() {
-		$('form2').bind('submit',function(){
+		$('form').bind('submit',function(){
 			showValues(); 
 			return false; 
 		});
@@ -221,7 +221,7 @@ $(document).ready(function(){
 	function showValues() {
 		$('#s-results').html('<img src="images/loader.gif" />');  
 		
-		$.post('search.php', { name: form2.name.value },
+		$.post('search.php', { name: form.name.value },
 		
 		function(result){
 			$('#s-results').html(result).show();
@@ -521,7 +521,7 @@ return false;
 
 
 
-<form name="form1" onsubmit="return validate()" method="POST" action="paybycash.php">
+<form action="paybycash.php" onsubmit="return validate()" method="POST" >
     	
 <div align="center">
         <h1 align="center">Billing Info</h1> 
