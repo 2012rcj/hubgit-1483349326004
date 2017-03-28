@@ -158,8 +158,7 @@ $('body').on('change', '#file', function(){
             </div>
            
 		   <!-- Right side div -->
-            <div id="formget"><a href=http://www.formget.com/app><img src="formget.jpg" alt="Online Form Builder"/></a>
-            </div>
+          
         </div>
     </body>
 </html>
