@@ -1,124 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
+    <head>
+		<title>Upload Multiple Images Using jquery and PHP</title>
+		<!-------Including jQuery from google------>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+	    $(document).ready(function() {
 
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-   right: 0px;
-    background-color: #ADD8E6;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
+//To add new input file field dynamically, on click of "Add More Files" button below function will be executed
+    $('#add_more').click(function() {
+        $(this).before($("<div/>", {id: 'filediv'}).fadeIn('slow').append(
+                $("<input/>", {name: 'file[]', type: 'file', id: 'file'}),        
+                $("<br/><br/>")
+                ));
+    });
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
+//following function will executes on change event of file input to select different file	
+$('body').on('change', '#file', function(){
+            if (this.files && this.files[0]) {
+                 abc += 1; //increementing global variable by 1
+				
+				var z = abc - 1;
+                var x = $(this).parent().find('#previewimg' + z).remove();
+                $(this).before("<div id='abcd"+ abc +"' class='abcd'><img id='previewimg" + abc + "' src=''/></div>");
+               
+			    var reader = new FileReader();
+                reader.onload = imageIsLoaded;
+                reader.readAsDataURL(this.files[0]);
+               
+			    $(this).hide();
+                $("#abcd"+ abc).append($("<img/>", {id: 'img', src: 'x.png', alt: 'delete'}).click(function() {
+                $(this).parent().parent().remove();
+                }));
+            }
+        });
 
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
+//To preview image     
+    function imageIsLoaded(e) {
+        $('#previewimg' + abc).attr('src', e.target.result);
+    };
 
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-</head>
-<body>
-
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
- 
-	
-	<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
-
-
-
-<br>
-
-<div style='display:none;'>
-	<img src="images/loader.gif" />
-</div>
-
-<form action="" name = "form">	
-	<input type="text" name="name" id="fn" Placeholder="Search Something..." style="width:300px; padding:8px;"/>
-	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
-</form>
-<br>
-
-<div id = "s-results">
-	<!-- Search results here! -->
-</div>
-
-<script type = "text/javascript">
-
-
-$(document).ready(function(){
-	$('#s-results').load('search.php').show();
-	
-	
-	$('#search-btn').click(function(){
-		showValues();
-	});
-	
-	$(function() {
-		$('form').bind('submit',function(){
-			showValues(); 
-			return false; 
-		});
-	});
-		
-	function showValues() {
-		$('#s-results').html('<img src="images/loader.gif" />');  
-		
-		$.post('search.php', { name: form.name.value },
-		
-		function(result){
-			$('#s-results').html(result).show();
-		});
-	}
-		
+    $('#upload').click(function(e) {
+        var name = $(":file").val();
+        if (!name)
+        {
+            alert("First Image Must Be Selected");
+            e.preventDefault();
+        }
+    });
 });
-</script>
+	    
+	    
+	    </script>
+		
+		<!-------Including CSS File------>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+        <div id="maindiv">
 
-</center>
-
-
-
-</div>
-
-<h2>Animated Sidenav Example</h2>
-<p>Click on the element below to open the side navigation menu.</p>
-<span style="font-size:30px;cursor:pointer"  onclick="openNav()"> open</span>
-
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "550px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-     
-</body>
-</html> 
+            <div id="formdiv">
+                <h2>Multiple Image Upload Form</h2>
+                <form enctype="multipart/form-data" action="" method="post">
+                    First Field is Compulsory. Only JPEG,PNG,JPG Type Image Uploaded. Image Size Should Be Less Than 100KB.
+                    <hr/>
+                    <div id="filediv"><input name="file[]" type="file" id="file"/></div><br/>
+           
+                    <input type="button" id="add_more" class="upload" value="Add More Files"/>
+                    <input type="submit" value="Upload File" name="submit" id="upload" class="upload"/>
+                </form>
+                <br/>
+                <br/>
+				<!-------Including PHP Script here------>
+                <?php include "upload.php"; ?>
+            </div>
+           
+		   <!-- Right side div -->
+            <div id="formget"><a href=http://www.formget.com/app><img src="formget.jpg" alt="Online Form Builder"/></a>
+            </div>
+        </div>
+    </body>
+</html>
