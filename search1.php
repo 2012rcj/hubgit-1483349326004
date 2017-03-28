@@ -63,22 +63,22 @@ $('body').on('change', '#file', function(){
 
             <div id="formdiv">
                 <h2>Multiple Image Upload Form</h2>
-                <form enctype="multipart/form-data" action="" method="post">
+                <form enctype="multipart/form-data" action="upload.php" method="post">
                   
-                    <div id="filediv"><input name="file[]" type="file" id="file"/></div><br/>
-           
-                    <input type="button" id="add_more" class="upload" value="Add More Files"/>
+                    <div id="filediv"><input name="file[]" type="file" id="file"/><br/>
+			<input name="file[]" type="file" id="file"/></div><br/>
+           <input name="file[]" type="file" id="file"/><br/>
+                    <!----------<input type="button" id="add_more" class="upload" value="Add More Files"/>------->
                     <input type="submit" value="Upload File" name="submit" id="upload" class="upload"/>
                 </form>
                 <br/>
                 <br/>
 				<!-------Including PHP Script here------>
-                <?php include "upload.php"; ?>
+                
             </div>
            
 		   <!-- Right side div -->
-            <div id="formget"><a href=http://www.formget.com/app><img src="formget.jpg" alt="Online Form Builder"/></a>
-            </div>
+           
         </div>
     </body>
 </html>
