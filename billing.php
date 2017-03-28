@@ -189,7 +189,7 @@
 	<img src="images/loader.gif" />
 </div>
 
-<form action="" class="searchbox_2" name = "form">	
+<form action="" class="searchbox_2" name = "form1">	
 	<input type="search" name="name" id="fn" class="search_2" placeholder="Search"/>
 	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
 </form>
