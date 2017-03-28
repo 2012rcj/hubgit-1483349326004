@@ -521,7 +521,7 @@ return false;
 
 
 
-<form name ="" action="paybycash.php" onsubmit="return validate()" method="POST" >
+<form name ="billinginfo" action="paybycash.php" onsubmit="return validate()" method="POST" >
     	
 <div align="center">
         <h1 align="center">Billing Info</h1> 
