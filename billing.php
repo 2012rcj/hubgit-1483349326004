@@ -519,7 +519,12 @@ return false;
 
 <body> 
 
-
+<script type="text/javascript">
+function submitform()
+{
+    document.forms["form1"].submit();
+}
+</script>
 
 <form name="form1" onsubmit="return validate()" method="POST" action="paybycash.php">
     	
@@ -541,7 +546,7 @@ return false;
              <tr><td>Billing Address:</td><td><textarea name= "billingaddress" cols="20" rows="5" ... ></textarea></td></tr>
             
             
-            <tr><td>&nbsp;</td><td><input type="submit"class ="myButton" value="Confirm Order"  /></td></tr>
+            <tr><td>&nbsp;</td><td><a href="javascript: submitform()">Submit</a></td></tr>
         </table>
 	</div>
 </form>
@@ -875,5 +880,4 @@ function toggle_visibility(id) {
 require("footer.php");
 ?>
 </html>
- 
  
