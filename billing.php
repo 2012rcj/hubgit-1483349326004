@@ -348,6 +348,9 @@ while ($row = db2_fetch_assoc($stmt)) {
 
 
 
+
+
+
 <?php
 if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/jpeg")
@@ -370,8 +373,10 @@ move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"
 "Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
 ?>
 
-$image = "<img src="images/<?php echo $_FILES["file"]["name"]; ?>" alt="Image path Invalid" height="65%" width="65%">"; 
-echo $image;
+"<img src="images/<?php
+ $image =$_FILES["file"]["name"]; 
+echo $image; ?>" alt="Image path Invalid" height="65%" width="65%">"; 
+
 <?php
 }
 }
