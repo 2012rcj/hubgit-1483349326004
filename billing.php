@@ -68,7 +68,7 @@
 		<style>
 
 .sidenav {
-    height: 100%;
+    height: 80px;
     width: 0;
     position: fixed;
     z-index: 1;
