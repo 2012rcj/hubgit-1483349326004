@@ -18,6 +18,10 @@ $File_Name= basename($_FILES["file"]["name"][$i]);
             if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
                 echo $j. ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
                             echo $File_Name. "</br>";
+                          $var_holding_img = "<img src='$File_Name' alt='picture' width='150' height='150'><br/></img>"; 
+                              $string =   $var_holding_img ;
+$_SESSION['File_Name'] = $string;
+echo $_SESSION['File_Name']; 
             } else {//if file was not moved.
                 echo $j. ').<span id="error">please try again!.</span><br/><br/>';
             }
