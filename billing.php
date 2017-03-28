@@ -375,10 +375,9 @@ move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"
 "Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
 ?>
 
-"<img src="images/<?php $image =  $_FILES["file[0]"]["name"]; 
+"<img src="images/<?php $image =  $_FILES["file"]["name"]; 
 echo $image;?>" alt="Image path Invalid" height="65%" width="65%">";
-"<img src="images/<?php $image =  $_FILES["file[1]"]["name"]; 
-echo $image;?>" alt="Image path Invalid" height="65%" width="65%">"; 
+ 
 										
 										
 
