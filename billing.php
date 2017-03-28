@@ -376,19 +376,11 @@ move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"
  $image =$_FILES["file"]["name"]; 
 foreach($image as $Images)
 {
-echo $Image; ?>"alt="Image path Invalid" height="65%" width="65%">"; 
+echo $Image; ?>" alt="Image path Invalid" height="65%" width="65%">"; 
 
 <?php
 }
-}
-}
-}else
-{
-echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file size::: ".$_FILES["file"]["size"];
-}
-?>
 
-<?php
 }
 }
 }else
