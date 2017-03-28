@@ -2,7 +2,7 @@
 if (isset($_POST['submit'])) {
     $j = 0; //Variable for indexing uploaded image 
     
-	$target_path = "uploads/"; //Declaring Path for uploaded images
+	$target_path = "images/"; //Declaring Path for uploaded images
     for ($i = 0; $i < count($_FILES['file']['name']); $i++) {//loop to get individual element from the array
 
         $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
