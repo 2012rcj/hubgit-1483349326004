@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-		  
-		<title>Upload Multiple Images Using jquery and PHP</title>
+	
 		<!-------Including jQuery from google------>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>
-	    $(document).ready(function() {
+        <script >
+
+
+var abc = 0; //Declaring and defining global increement variable
+
+$(document).ready(function() {
 
 //To add new input file field dynamically, on click of "Add More Files" button below function will be executed
     $('#add_more').click(function() {
@@ -50,12 +53,11 @@ $('body').on('change', '#file', function(){
         }
     });
 });
-	    
-	    
-	    </script>
+
+
+</script>
 		
-		<!-------Including CSS File------>
-        <link rel="stylesheet" type="text/css" href="style.css">
+	
     <body>
         <div id="maindiv">
 
@@ -75,7 +77,8 @@ $('body').on('change', '#file', function(){
             </div>
            
 		   <!-- Right side div -->
-          
+            <div id="formget"><a href=http://www.formget.com/app><img src="formget.jpg" alt="Online Form Builder"/></a>
+            </div>
         </div>
     </body>
 </html>
