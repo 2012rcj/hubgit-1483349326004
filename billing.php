@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-      
+
 <head>  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,7 +189,7 @@
 	<img src="images/loader.gif" />
 </div>
 
-<form action="" class="searchbox_2" name ="form">	
+<form action="" class="searchbox_2" name = "form">	
 	<input type="search" name="name" id="fn" class="search_2" placeholder="Search"/>
 	<input type="submit" value="Search" id="menu-button"style="padding:8px;"/>
 </form>
@@ -521,11 +521,9 @@ return false;
 
 
 
-
+<form name="form1" onsubmit="return validate()" method="POST" action="paybycash.php">
     	
 <div align="center">
-<form name ="form" action="paybycash.php" onsubmit="return validate()" method="POST" >
-
         <h1 align="center">Billing Info</h1> 
 
  
