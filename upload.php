@@ -6,8 +6,8 @@ if (isset($_POST['submit'])) {
     for ($i = 0; $i < count($_FILES['file']['name']); $i++) {//loop to get individual element from the array
 
         $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
-        $ext = explode('.', basename($_FILES['file']['name'][$i]));//explode file name from dot(.) 
-$File_Name= basename($_FILES["file"]["name"][$i]);
+        $ext = explode('.', basename("images/". $_FILES['file']['name'][$i]));//explode file name from dot(.) 
+$File_Name= basename("images/". $_FILES["file"]["name"][$i]);
         $file_extension = end($ext); //store extensions in the variable
         
 		$target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext) - 1];//set the target path with a new name of image
