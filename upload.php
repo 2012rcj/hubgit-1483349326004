@@ -31,4 +31,4 @@ echo $_SESSION['File_Name'];
     }
 }
 ?>
-<?php include "upload.php"; ?>
+
