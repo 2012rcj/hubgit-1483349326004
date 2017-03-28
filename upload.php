@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
 
         $validextensions = array("jpeg", "jpg", "png");  //Extensions which are allowed
         $ext = explode('.', basename($_FILES['file']['name'][$i]));//explode file name from dot(.) 
-	    $File_Name= $target_path.basename($_FILES["file"]["name"][$i]);
+	    $File_Name= basename($_FILES["file"]["name"][$i]);
         $file_extension = end($ext); //store extensions in the variable
         
 		$target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext) - 1];//set the target path with a new name of image
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
                 && in_array($file_extension, $validextensions)) {
             if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
                 echo $j. ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
-		    $var_holding_img = "<img src='$File_Name' alt='picture' width='150' height='150'><br/></img>";     
+		    $var_holding_img = "<img src=images/'$File_Name' alt='picture' width='150' height='150'><br/></img>";     
 $string =   $var_holding_img ;
 $_SESSION['File_Name'] = $string;
 echo $_SESSION['File_Name']; 
