@@ -26,9 +26,7 @@ $cart = new Cart;
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
     
-    table {
-  font-family: "Helvetica Neue", Helvetica, sans-serif
-}
+ 
 caption {
   text-align: left;
   color: white;
@@ -69,7 +67,7 @@ tfoot tr th:last-child {
     .footBtn{width: 20%;float: left;}
     .orderBtn {float: right;}
     </style>
-</head>
+
 <body>
 <h1>Order Summary</h1>
 <div class="container">
