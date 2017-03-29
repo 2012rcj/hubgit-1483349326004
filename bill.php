@@ -58,7 +58,7 @@ $_SESSION['sessCustomerID'] = 1;
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
             	
-$_SESSION['Prod_Nm']= wordwrap($item["PROD_NM"], 8, "\n", false);
+$_SESSION['Prod_Nm']= $item["PROD_NM"];
 $_Session['Price']=$item["price"];
 $_Session['Qty']=$item["qty"];
 $_Session['Subtotal']=$item["subtotal"];
@@ -66,7 +66,7 @@ $_Session['Prod_Id']=$item["PROD_ID"]
 ?>
         
        <tr class="table_fields_top">
-            <td ><?php echo $item["PROD_NM"]; ?></td>
+            <td ><?php echo wordwrap($item["PROD_NM"], 8, "\n", false); ?></td>
             <td><?php echo 'Rs'.$item["price"].''; ?></td>
             <td><?php echo $item["qty"]; ?></td>
             <td><?php echo 'Rs'.$item["subtotal"].''; ?></td>
