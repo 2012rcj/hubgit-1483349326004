@@ -9,6 +9,7 @@
 
 
 <?php
+include 'header.php';
 // include databse configuration file
 include 'db_const.php';
 // initializ shopping cart class
