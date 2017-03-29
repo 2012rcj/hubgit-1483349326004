@@ -66,7 +66,7 @@ $_Session['Prod_Id']=$item["PROD_ID"]
 ?>
         
        <tr class="table_fields_top">
-            <td ><?php echo wordwrap($item["PROD_NM"], 8, "\n", false); ?></td>
+            <td ><?php echo $item["PROD_NM"]; ?></td>
             <td><?php echo 'Rs'.$item["price"].''; ?></td>
             <td><?php echo $item["qty"]; ?></td>
             <td><?php echo 'Rs'.$item["subtotal"].''; ?></td>
@@ -77,11 +77,13 @@ $_Session['Prod_Id']=$item["PROD_ID"]
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="3"></td>
+            <td></td>
             <?php if($cart->total_items() > 0){
             	$_SESSION['Total']=$cart->total();
             	?>
-            <td class="text-center"><strong>Total <?php echo 'Rs'.$cart->total().''; ?></strong></td>
+		<td></td>
+		<td><strong>Total<strong></td>
+            <td class="text-center"><strong> <?php echo 'Rs'.$cart->total().''; ?></strong></td>
             <?php } ?>
     
         <a href="billing.php">  Continue Shopping</a>
