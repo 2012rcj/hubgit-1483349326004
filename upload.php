@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
                 && in_array($file_extension, $validextensions)) {
             if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {//if file moved to uploads folder
                 echo $j. ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
-		    $var_holding_img = "<img src='$File_Name' alt='picture' width='150' height='150'><br/></img>";     
+		    $var_holding_img = "<img src='images/<?php echo $File_Name; ?>' alt='picture' width='150' height='150'><br/></img>";     
 $string =   $var_holding_img ;
 $_SESSION['File_Name'] = $string;
 echo $_SESSION['File_Name']; 
