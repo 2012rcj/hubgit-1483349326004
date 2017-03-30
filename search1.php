@@ -1,13 +1,17 @@
-<html>
-	<body>
-<button class="myclass" cotent-url="delete.php">Delete</button>
-<button class="myclass" cotent-url="save.php">Save</button>
-<div class="popup"><iframe src=""></iframe></div>
+<?php
+$stmt = "SELECT * FROM retail_priscription WHERE priscription='	1490872071'";
+       $result = db2_prepare($conn, $stmt);
+       db2_execute($result);
+ $row = db2_fetch_array($result);
 
-<script type="text/javascript">
-$('.myclass').click(function(){
-    $('.popup iframe').attr('src', $(this).attr('content-url'));
-})
-</script>
-		</body>
-	</html>
+     
+$images=$row['2'];
+$remove_last_comma=substr($images,0,-1);
+$temp = explode(',',$remove_last_comma);
+for($i=0;$i<count($temp);$i++)
+{   
+	echo '<img src="images/'.trim($temp[$i]).'" height="50" width="50">';
+	echo "<br />";
+    echo "<br />";  
+}
+?>
