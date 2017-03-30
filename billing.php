@@ -388,9 +388,9 @@ if (!db2_execute($stmt1)) {
            
         if(!empty($stmt)){
         
-            while($row = db2_fetch_assoc($result)){
+            while($row = db2_fetch_array($result)){
 ?>
-                                                                            <img src="images/<?php echo $row['IMAGE'];?>" alt=" " height="75" width="75">
+                                                                            <img src="images/<?php echo $row['2'];?>" alt=" " height="75" width="75">
         
       <?php  }}?>
 
