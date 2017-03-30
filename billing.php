@@ -66,7 +66,6 @@
     <!--------------/Side Nav Bar---------------------->
 		
 		<style>
-
 .sidenav {
     height: 60%;
     width: 0;
@@ -83,7 +82,6 @@
   border-bottom-left-radius: 4em;
 	 
 }
-
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -93,11 +91,9 @@
     transition: 0.3s;
 	
 			}
-
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
 }
-
 .sidenav .closebtn {
     position: absolute;
     top: 12px;
@@ -127,7 +123,6 @@
         0 -2px 6px 1px rgba(199, 199, 199, 0.55) inset, 
         0 2px 4px 2px rgba(255, 255, 255, 0.83) inset;
 }
-
 .search_2{
     width:200px;
     height:30px;
@@ -171,7 +166,6 @@
 .search_2:focus{
     outline:0;
 }
-
 </style>
 
 
@@ -201,8 +195,6 @@
 </div>
 <center>
 <script type = "text/javascript">
-
-
 $(document).ready(function(){
 	$('#s-results').load('search.php').show();
 	
@@ -243,7 +235,6 @@ $(document).ready(function(){
 function openNav() {
     document.getElementById("mySidenav").style.width = "350px";
 }
-
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
@@ -267,13 +258,8 @@ function closeNav() {
 			<?php
 include 'db_const.php';
 SESSION_START();
-
   $Mobile_No=$_SESSION['Mobile_No'];
-
 	$CUST_ID=$_SESSION['CUST_id'];
-
-
-
 $sql = "SELECT * FROM RETAIL_CUST  where CUST_ID='$CUST_ID' LIMIT 1 ";
 $stmt = db2_prepare($conn, $sql);
 $result = db2_execute($stmt);
@@ -354,6 +340,9 @@ while ($row = db2_fetch_assoc($stmt)) {
 
 
 <?php
+
+include 'db_const.php';
+}
 if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/jpeg")
 || ($_FILES["file"]["type"] == "image/png"))
@@ -373,6 +362,16 @@ echo "<b>".$_FILES["file"]["name"] . " already exists. </b>";
 {
 move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"]);
 "Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
+
+$Store_Id='1462908501';
+$image = file_get_contents($_FILES['image']['tmp_name']);
+ $priscription_VALUE=time();
+$stmt=db2_prepare($conn,"INSERT INTO retail_priscription(priscription,image,Store_Id) VALUES('$priscription_VALUE','$image','$Store_Id')");
+//*End Of query*// 
+if (!db2_execute($stmt)) {
+    printf("%s\n", db2_stmt_error($stmt));
+    $err = db2_stmt_errormsg();
+
 ?>
 
 "<img src="images/<?php $image =  $_FILES["file"]["name"]; 
@@ -495,27 +494,21 @@ function FillBilling(f) {
         var iKeyCode = (evt.which) ? evt.which : evt.keyCode
         if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
             return false;
-
         return true;
-
 }	
 function validate(){
 		var f=document.form1;
                 if(f.mobile_no.value=='')
                  {
-
                 alert('Your phone number is required');
                 f.mobile_no.focus();
 return false;
-
-
 }
 		if(f.name.value==''){
 			alert('Your name is required');
 			f.name.focus();
 			return false;
 		}
-
 		f.command.value='update';
 		f.submit();
 	}
@@ -598,10 +591,6 @@ include 'db_const.php';
 <link href="style.css" rel="stylesheet">
 
 <style type="text/css">
-
-
-
-
 .btnLink{
 	display: inline-block;
 	padding: 10px 20px;
@@ -626,137 +615,74 @@ cursor: pointer;
 background: #C2B280; 
 padding: 2px 4px 2px 4px; 
 }
-
 .pg-selected { 
 color: #fff; 
 font-size: 15px; 
 background: #C2B280; 
 padding: 2px 4px 2px 4px; 
 }
-
 </style>
 
 
 
 <script type="text/javascript">
-
-
-
-
 function Pager(tableName, itemsPerPage) {
-
 this.tableName = tableName;
-
 this.itemsPerPage = itemsPerPage;
-
 this.currentPage = 1;
-
 this.pages = 0;
-
 this.inited = false;
-
 this.showRecords = function(from, to) {
-
 var rows = document.getElementById(tableName).rows;
-
 // i starts from 1 to skip table header row
-
 for (var i = 1; i < rows.length; i++) {
-
 if (i < from || i > to)
-
 rows[i].style.display = 'none';
-
 else
-
 rows[i].style.display = '';
-
 }
-
 }
-
 this.showPage = function(pageNumber) {
-
 if (! this.inited) {
-
 alert("not inited");
-
 return;
-
 }
-
 var oldPageAnchor = document.getElementById('pg'+this.currentPage);
-
 oldPageAnchor.className = 'pg-normal';
-
 this.currentPage = pageNumber;
-
 var newPageAnchor = document.getElementById('pg'+this.currentPage);
-
 newPageAnchor.className = 'pg-selected';
-
 var from = (pageNumber - 1) * itemsPerPage + 1;
-
 var to = from + itemsPerPage - 1;
-
 this.showRecords(from, to);
-
 }
-
 this.prev = function() {
-
 if (this.currentPage > 1)
-
 this.showPage(this.currentPage - 1);
-
 }
-
 this.next = function() {
-
 if (this.currentPage < this.pages) {
-
 this.showPage(this.currentPage + 1);
-
 }
-
 }
-
 this.init = function() {
-
 var rows = document.getElementById(tableName).rows;
-
 var records = (rows.length - 1);
-
 this.pages = Math.ceil(records / itemsPerPage);
-
 this.inited = true;
-
 }
-
 this.showPageNav = function(pagerName, positionId) {
-
 if (! this.inited) {
-
 alert("not inited");
-
 return;
-
 }
-
 var element = document.getElementById(positionId);
-
 var pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal">< </span> ';
-
 for (var page = 1; page <= this.pages; page++)
-
 pagerHtml += '<style id="pg' + page + '" class="pg-normal;"></style> ';
-
 pagerHtml += '<span onclick="'+pagerName+'.next();" class="pg-normal"> ></span>';
-
 element.innerHTML = pagerHtml;
-
 }
-
 }
 </script>
 <SCRIPT TYPE="text/javascript"> 
@@ -861,10 +787,8 @@ pager.showPage(1);
  <!-- adding jquery form plugin --> 
  <script src="//oss.maxcdn.com/jquery.form/3.50/jquery.form.min.js"></script>
 <script type="text/javascript">
-
 function toggle_visibility(id) {
             if (document.getElementById('foo')) {
-
                 if (document.getElementById('foo1').style.display == 'none') {
                     document.getElementById('foo1').style.display = 'block';
                     document.getElementById('foo').style.display = 'none';
@@ -875,10 +799,6 @@ function toggle_visibility(id) {
                 }
             }
 }
-
-
-
-
 </script>
 
 
