@@ -340,7 +340,9 @@ while ($row = db2_fetch_assoc($stmt)) {
 
 
 <?php
+
 include 'db_const.php';
+
 if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/jpeg")
 || ($_FILES["file"]["type"] == "image/png"))
@@ -358,20 +360,17 @@ if (file_exists("images/".$_FILES["file"]["name"]))
 echo "<b>".$_FILES["file"]["name"] . " already exists. </b>";
 }else
 {
-for($i=0; $i<count($_FILES['file']['name']); $i++){
- $extension = explode('.', basename( $_FILES['file']['name'][$i]));
-     $path = $path . md5(uniqid()) . "." . $extension[count($extension)-1]; 
-move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $path);
+move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"]);
 "Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
+
 $Store_Id='1462908501';
-$image = $_FILES["file"]["name"];
+$image = file_get_contents($_FILES["file"]["name"]);
  $priscription_VALUE=time();
-$stmt=db2_prepare($conn,"INSERT INTO retail_priscription(priscription,image,Store_Id) VALUES('$priscription_VALUE','$extension','$Store_Id')");
+$stmt=db2_prepare($conn,"INSERT INTO retail_priscription(priscription,image,Store_Id) VALUES('$priscription_VALUE','$image','$Store_Id')");
 //*End Of query*// 
 if (!db2_execute($stmt)) {
     printf("%s\n", db2_stmt_error($stmt));
     $err = db2_stmt_errormsg();
-}
 }
 ?>
 
@@ -384,6 +383,7 @@ echo $image;?>" alt="Image path Invalid" height="65%" width="65%">";
 <?php
 }
 }
+
 }
 else
 {
@@ -813,3 +813,4 @@ function toggle_visibility(id) {
 require("footer.php");
 ?>
 </html>
+ 
