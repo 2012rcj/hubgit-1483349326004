@@ -379,8 +379,7 @@ if (!db2_execute($stmt1)) {
     printf("%s\n", db2_stmt_error($stmt1));
     $err = db2_stmt_errormsg();
 }
-?>
-<?php
+
        ;
         //get rows query
         $stmt = "SELECT * FROM retail_priscription WHERE priscription='$priscription_VALUE'";
