@@ -364,7 +364,7 @@ move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"
 "Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
 
 $Store_Id='1462908501';
-$image = file_get_contents($_FILES['image']['tmp_name']);
+$image = file_get_contents($_FILES["file"]["name"]);
  $priscription_VALUE=time();
 $stmt=db2_prepare($conn,"INSERT INTO retail_priscription(priscription,image,Store_Id) VALUES('$priscription_VALUE','$image','$Store_Id')");
 //*End Of query*// 
