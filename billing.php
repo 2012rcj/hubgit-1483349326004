@@ -342,7 +342,7 @@ while ($row = db2_fetch_assoc($stmt)) {
 <?php
 
 include 'db_const.php';
-}
+
 if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/jpeg")
 || ($_FILES["file"]["type"] == "image/png"))
@@ -371,7 +371,7 @@ $stmt=db2_prepare($conn,"INSERT INTO retail_priscription(priscription,image,Stor
 if (!db2_execute($stmt)) {
     printf("%s\n", db2_stmt_error($stmt));
     $err = db2_stmt_errormsg();
-
+}
 ?>
 
 "<img src="images/<?php $image =  $_FILES["file"]["name"]; 
@@ -383,7 +383,9 @@ echo $image;?>" alt="Image path Invalid" height="65%" width="65%">";
 <?php
 }
 }
-}else
+
+}
+else
 {
 echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file size::: ".$_FILES["file"]["size"];
 }
