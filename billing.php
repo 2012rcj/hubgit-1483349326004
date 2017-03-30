@@ -388,11 +388,18 @@ if (!db2_execute($stmt1)) {
            
         if(!empty($stmt)){
         
-            while($row = db2_fetch_array($result)){
+            while($row = db2_fetch_assoc($result)){
+                $pictures=$row['image'];
+                for($i=0;$i<count($pictures);$i++)
+{
+	
+	echo '<img src="images/'.$pictures[$i].'" height="50" width="50">';
+        echo "<br />";
+    echo "<br />";  
+}
+}
+}
 ?>
-                                                                            <img src="images/<?php echo $row['2'];?>" alt=" " height="75" width="75">
-        
-      <?php  }}?>
 
        
  
