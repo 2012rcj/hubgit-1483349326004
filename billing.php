@@ -381,10 +381,10 @@ if (!db2_execute($stmt1)) {
 }
 ?>
 
-"<img src="images/<?php $image =  $_FILES["file"]["name"]; 
+"<img src="images/<?php $image = $_FILES["file"]["name"]; 
 echo $image;?>" alt="Image path Invalid" height="65%" width="65%">";
-"<img src="images/<?php $image =  $_FILES["file1"]["name"]; 
-echo $image;?>" alt="Image path Invalid" height="65%" width="65%">";
+"<img src="images/<?php $image1 = $_FILES["file1"]["name"]; 
+echo $image1;?>" alt="Image path Invalid" height="65%" width="65%">";
  
 										
 										
