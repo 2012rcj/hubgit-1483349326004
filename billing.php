@@ -391,6 +391,7 @@ if (!db2_execute($stmt1)) {
             while($row = db2_fetch_array($result)){
 ?>
 <img src="images/<?php echo $row['2'];?>" alt=" " height="75" width="75">
+<img src="images/<?php echo $row['2'];?>" alt=" " height="75" width="75">
         
       <?php  }}?>
 
