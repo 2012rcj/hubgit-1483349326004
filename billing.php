@@ -380,20 +380,31 @@ if (!db2_execute($stmt1)) {
     $err = db2_stmt_errormsg();
 }
 ?>
+<?php
+       ;
+        //get rows query
+        $stmt = "SELECT * FROM retail_priscription WHERE priscription='$priscription_VALUE'";
+       $result = db2_prepare($conn, $stmt);
+       db2_execute($result);
+           
+        if(!empty($stmt)){
+        
+            while($row = db2_fetch_assoc($result)){
 
-"<img src="images/<?php $image = $_FILES["file"]["name"]; 
-echo $image;?>" alt="Image path Invalid" height="65%" width="65%">";
-"<img src="images/<?php $image1 = $_FILES["file1"]["name"]; 
-echo $image1;?>" alt="Image path Invalid" height="65%" width="65%">";
+        $s= $row['image'];                
+       echo '<img src="'.$s.'" alt="HTML5 Icon" style="width:60px;height:60px">';          
+        }}?>
+
+       
  
 										
 										
 
 <?php
-}
+}}
 }
 
-}
+
 else
 {
 echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file size::: ".$_FILES["file"]["size"];
