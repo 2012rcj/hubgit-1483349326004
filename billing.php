@@ -390,7 +390,8 @@ if (!db2_execute($stmt1)) {
         
             while($row = db2_fetch_assoc($result)){
 
-        $s= $row['image'];                
+        $s= $row['image'];     
+		    echo $row['PRISCRIPTION'];
        echo '<img src="'.$s.'" alt="HTML5 Icon" style="width:60px;height:60px">';          
         }}?>
 
