@@ -392,7 +392,7 @@ if (!db2_execute($stmt1)) {
 
         $s= $row['image'];     
 		    echo $row['PRISCRIPTION'];
-       echo '<img src="'.$s.'" alt="HTML5 Icon" style="width:60px;height:60px">';          
+      echo'<img height="300" width="300" src="data:image;base64,'.$rows['image'].'">';         
         }}?>
 
        
