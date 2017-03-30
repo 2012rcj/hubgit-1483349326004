@@ -1,4 +1,5 @@
 <?php
+include 'db_const.php';
 $stmt = "SELECT * FROM retail_priscription WHERE priscription='	1490872071'";
        $result = db2_prepare($conn, $stmt);
        db2_execute($result);
