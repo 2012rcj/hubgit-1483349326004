@@ -322,11 +322,11 @@ while ($row = db2_fetch_assoc($stmt)) {
 						<div class="form-wrapper">
 						<div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
 						          
-							
+							<div class="panel panel-skin">
 							<div class="panel-heading">
 									<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span>Your Priscription </h3>
 									</div>
-									
+									<div class="panel-body">
 
 
 
@@ -389,16 +389,10 @@ if (!db2_execute($stmt1)) {
         if(!empty($stmt)){
         
             while($row = db2_fetch_assoc($result)){
-                $pictures=$row['image'];
-                for($i=0;$i<count($pictures);$i++)
-{
-	?>
-<img src="images/ <?php $pictures[$i];?>" height="50" width="50">;
-<?php
-}
-}
-}
 ?>
+<img src="images/<?php echo $row['IMAGE'];?>" alt=" " height="75" width="75">
+        
+      <?php  }}?>
 
        
  
@@ -414,8 +408,8 @@ else
 {
 echo "Invalid file detail ::<br> file type ::".$_FILES["file"]["type"]." , file size::: ".$_FILES["file"]["size"];
 }
-?>			
-									 		
+?>			</div>
+							</div>		 		
 						</div>
 						</div>
 						</div>
