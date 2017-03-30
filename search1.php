@@ -1,18 +1,52 @@
 <?php
+
 include 'db_const.php';
-$stmt = "SELECT * FROM retail_priscription WHERE priscription='1490872071';
+
+if ((($_FILES["file"]["type"] == "image/gif")
+|| ($_FILES["file"]["type"] == "image/jpeg")
+|| ($_FILES["file"]["type"] == "image/png"))
+&& ($_FILES["file"]["size"] < 100000000))
+{
+if ($_FILES["file"]["error"] > 0)
+{
+echo "File Error : " . $_FILES["file"]["error"] . "<br />";
+}else {
+ $_FILES["file"]["name"] . "<br />";
+ $_FILES["file"]["type"] . "<br />";
+ ($_FILES["file"]["size"] / 1024) . " Kb<br />"; 
+if (file_exists("images/".$_FILES["file"]["name"]))
+{
+echo "<b>".$_FILES["file"]["name"] . " already exists. </b>";
+}else
+{
+move_uploaded_file($_FILES["file"]["tmp_name"],"images/". $_FILES["file"]["name"]);
+"Stored in: " . "images/" . $_FILES["file"]["name"]."<br />";
+
+        //get rows query
+        $stmt = "SELECT * FROM retail_priscription WHERE priscription='1490872071'";
        $result = db2_prepare($conn, $stmt);
        db2_execute($result);
- $row = db2_fetch_array($result);
+           
+        if(!empty($stmt)){
+        
+            while($row = db2_fetch_array($result)){
+          $temp=$row['2'];
 
-     
-$images=$row['2'];
-$remove_last_comma=substr($images,0,-1);
-$temp = explode(',',$remove_last_comma);
-for($i=0;$i<count($temp);$i++)
-{   
-	echo '<img src="images/'.trim($temp[$i]).'" height="50" width="50">';
-	echo "<br />";
-    echo "<br />";  
+foreach($temp as $image)
+{
+$images="images/".$image;
+
+
+ echo "<img src='$images' height='100' width='200' />";
+
+}
+  }}
+
+       
+ 
+										
+										
+
+}}
 }
 ?>
