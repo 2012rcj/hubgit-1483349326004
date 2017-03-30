@@ -389,11 +389,10 @@ if (!db2_execute($stmt1)) {
         if(!empty($stmt)){
         
             while($row = db2_fetch_assoc($result)){
-
-        $s= $row['image'];     
-		    echo $row['PRISCRIPTION'];
-      echo'<img height="300" width="300" src="data:image;base64,'.$rows['image'].'">';         
-        }}?>
+?>
+                                                                            <img src="images/<?php echo $row['IMAGE'];?>" alt=" " height="75" width="75">
+        
+      <?php  }}?>
 
        
  
