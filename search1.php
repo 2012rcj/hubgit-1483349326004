@@ -1,42 +1,38 @@
 <?php
-/*  
-Parameter Example
-	$data = array('post_id'=>'12345','post_title'=>'A Blog post');
-	$target = 'single tocken id or topic name';
-	or
-	$target = array('token1','token2','...'); // up to 1000 in one request
-*/
-public function sendMessage($data,$target){
-//FCM api URL
-$url = 'https://fcm.googleapis.com/fcm/send';
-//api_key available in Firebase Console -> Project Settings -> CLOUD MESSAGING -> Server key
-$server_key = ' AIzaSyDkV_TxAApkulxaUBgu_8FLY7H2WrFAiIo';
-			
-$fields = array();
-$fields['data'] = $data;
-if(is_array($target)){
-	$fields['registration_ids'] = $target;
-}else{
-	$fields['to'] = $target;
-}
-//header with content_type api key
-$headers = array(
-	'Content-Type:application/json',
-  'Authorization:key='.$server_key
+// API access key from Google API's Console
+define( 'API_ACCESS_KEY', 'AIzaSyDkV_TxAApkulxaUBgu_8FLY7H2WrFAiIo' );
+$registrationIds = "12345";
+// prep the bundle
+$msg = array
+(
+	'message' 	=> 'here is a message. message',
+	'title'		=> 'This is a title. title',
+	'subtitle'	=> 'This is a subtitle. subtitle',
+	'tickerText'	=> 'Ticker text here...Ticker text here...Ticker text here',
+	'vibrate'	=> 1,
+	'sound'		=> 1,
+	'largeIcon'	=> 'large_icon',
+	'smallIcon'	=> 'small_icon'
 );
-			
+$fields = array
+(
+	'registration_ids' 	=> $registrationIds,
+	'data'			=> $msg
+);
+ 
+$headers = array
+(
+	'Authorization: key=' . API_ACCESS_KEY,
+	'Content-Type: application/json'
+);
+ 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
-$result = curl_exec($ch);
-if ($result === FALSE) {
-	die('FCM Send Error: ' . curl_error($ch));
-}
-curl_close($ch);
-return $result;
-}
+curl_setopt( $ch,CURLOPT_URL, 'https://android.googleapis.com/gcm/send' );
+curl_setopt( $ch,CURLOPT_POST, true );
+curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
+curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
+curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
+curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
+$result = curl_exec($ch );
+curl_close( $ch );
+echo $result;
