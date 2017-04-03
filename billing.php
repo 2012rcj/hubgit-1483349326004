@@ -389,20 +389,10 @@ if (!db2_execute($stmt1)) {
         if(!empty($stmt)){
         
             while($row = db2_fetch_array($result)){
-$tempo=$row['2'];
-
-          foreach($tempo as $imag)
-
-{
-$img[]="images/$imag";
-
-foreach($img as $ima)
-{
 ?>
-<img src="$ima" alt=" " height="75" width="75">
-
+<img src="images/<?php echo $row['2'];?>" alt=" " height="75" width="75">
         
-      <?php  }}}}}?>
+      <?php  }}?>
 
        
  
@@ -410,7 +400,7 @@ foreach($img as $ima)
 										
 
 <?php
-}
+}}
 }
 
 
@@ -842,3 +832,4 @@ function toggle_visibility(id) {
 require("footer.php");
 ?>
 </html>
+ 
