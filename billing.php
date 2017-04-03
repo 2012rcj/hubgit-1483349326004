@@ -399,7 +399,7 @@ $img[]="images/$imag";
 foreach($img as $ima)
 {
 ?>
-<img src="{'$ima'}" alt=" " height="75" width="75">
+<img src="$ima" alt=" " height="75" width="75">
 
         
       <?php  }}}}}?>
