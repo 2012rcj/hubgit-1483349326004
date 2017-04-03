@@ -6,7 +6,7 @@ applications:
   name: hubgit
   host: hubgit
   disk_quota: 1024M
-  buildpack: https://github.com/ibmdb/php-buildpack
+buildpack: https://github.com/ibmdb/php-buildpack
   
  
 
